@@ -10,11 +10,17 @@ using namespace std;
 class Course{
 
     public:
-        Course(int=0,string="N/A",string="N/A",int=0,char='Z',string="N/A", LectDaysType=BAD_LECT_DAYS);
-        bool computeDays(WeekDayType&);
+        Course(string="N/A",string="N/A",int=0,char='Z',string="N/A", LectDaysType=BAD_LECT_DAYS, int=0, int=0);
+        ~Course();
+        bool computeDays(WeekDayType&, WeekDayType&);
         bool computeSlot(TimeSlotType&);
         bool lessThan(Course*);
         void print();
+        int getId();
+        string getTerm();
+        string getInstructor();
+        string getCourse();
+        void setId(int);
         
     private:
         int id;
@@ -24,7 +30,8 @@ class Course{
         char section; 
         string instructor;
         LectDaysType days;
-        Time start; 
+        Time* time; 
+        void printDays();
 
 };
 
