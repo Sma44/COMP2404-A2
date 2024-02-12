@@ -19,7 +19,8 @@ class Schedule{
 
     private:
         string term;
-        Course* courses[5][7];
+        Course* courses[NUM_DAYS][NUM_SLOTS];
+        void printHorizontalLine();
 
 };
 
