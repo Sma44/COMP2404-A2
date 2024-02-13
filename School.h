@@ -8,20 +8,20 @@
 
 using namespace std;
 
-class School{
+class School
+{
 
-    public:
-        School(string="N/A");
-        void addCourse(Course*);
-        bool findCourse(int, Course**);
-        void printCourse(string);
+public:
+    School(string = "N/A");
+    void addCourse(Course *);
+    bool findCourse(int, Course **);
+    void printCourse(string);
 
-    private:
-        string name;
-        // maybe need pointer array instead
-        Course courses[MAX_ARR];
-        int numCourses;
-
+private:
+    string name;
+    // maybe need pointer array instead
+    Course courses[MAX_ARR];
+    int numCourses;
 };
 
 #endif

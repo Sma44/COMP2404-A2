@@ -7,22 +7,21 @@ using namespace std;
 #include "Course.h"
 #include "defs.h"
 
-class Schedule{
+class Schedule
+{
 
-    public:
-        Schedule(string="N/A");
-        // might need destructor??
-        bool addCourse(Course*);
-        void print();
-        void clear();
-        string getTerm();
+public:
+  Schedule(string = "N/A");
+  // might need destructor??
+  bool addCourse(Course *);
+  void print();
+  void clear();
+  string getTerm();
 
-    private:
-        string term;
-        Course* courses[NUM_DAYS][NUM_SLOTS];
-        void printHorizontalLine();
-
+private:
+  string term;
+  Course *courses[NUM_DAYS][NUM_SLOTS];
+  void printHorizontalLine();
 };
-
 
 #endif

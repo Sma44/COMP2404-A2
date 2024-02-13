@@ -12,83 +12,93 @@ Time::Time(int h, int m)
 
 void Time::set(int h, int m)
 {
-  hours   = ( h >= 0 && h < 24) ? h : 0;
-  minutes = ( m >= 0 && m < 60) ? m : 0;
+  hours = (h >= 0 && h < 24) ? h : 0;
+  minutes = (m >= 0 && m < 60) ? m : 0;
 }
 
 int Time::convertToMins()
 {
-  return (hours*60 + minutes);
-
+  return (hours * 60 + minutes);
 }
 
 void Time::print()
 {
-  cout << right << setfill('0')<<setw(2)<<hours<<":"
-       << right << setfill('0')<<setw(2)<<minutes;
+  cout << right << setfill('0') << setw(2) << hours << ":"
+       << right << setfill('0') << setw(2) << minutes;
 }
 
-bool Time::computeSlot(TimeSlotType& slot){
+bool Time::computeSlot(TimeSlotType &slot)
+{
 
-  switch(hours){
-    case 8:
-      slot=SLOT_0830;
-      return true;
-    case 10:
-      slot=SLOT_1000;
-      return true;
-    case 11:
-      slot=SLOT_1130;
-      return true;
-    case 13:
-      slot=SLOT_1300;
-      return true;
-    case 14:
-      slot=SLOT_1430;
-      return true;
-    case 16:
-      SLOT_1600;
-      return true;
-    case 18:
-      slot=SLOT_1800;
-      return true;
-    default:
-      slot=BAD_TIME_SLOT;
-      cout << endl << "error in the time" << endl;
-      break;
+  bool ret = true;
+
+  switch (hours)
+  {
+  case 8:
+    slot = SLOT_0830;
+    break;
+  case 10:
+    slot = SLOT_1000;
+    break;
+  case 11:
+    slot = SLOT_1130;
+    break;
+  case 13:
+    slot = SLOT_1300;
+    break;
+  case 14:
+    slot = SLOT_1430;
+    break;
+  case 16:
+    SLOT_1600;
+    break;
+  case 18:
+    slot = SLOT_1800;
+    break;
+  default:
+    slot = BAD_TIME_SLOT;
+    cout << endl
+         << "error in the time" << endl;
+    ret = false;
+    break;
   }
 
-  return false;
+  return ret;
 }
 
-bool Time::setFromSlot(TimeSlotType slot){
+bool Time::setFromSlot(TimeSlotType slot)
+{
 
-    switch(slot){
-    case SLOT_0830:
-      set(8,30);
-      return true;
-    case SLOT_1000:
-      set(10,0);
-      return true;
-    case SLOT_1130:
-      set(11,30);
-      return true;
-    case SLOT_1300:
-      set(13,0);
-      return true;
-    case SLOT_1430:
-      set(13,0);
-      return true;
-    case SLOT_1600:
-      set(13,0);
-      return true;
-    case SLOT_1800:
-      set(13,0);
-      return true;
-    case BAD_TIME_SLOT:
-      set(13,0);
-      return false;
+  bool ret = true;
+
+  switch (slot)
+  {
+  case SLOT_0830:
+    set(8, 30);
+    break;
+  case SLOT_1000:
+    set(10, 0);
+    break;
+  case SLOT_1130:
+    set(11, 30);
+    break;
+  case SLOT_1300:
+    set(13, 0);
+    break;
+  case SLOT_1430:
+    set(13, 0);
+    break;
+  case SLOT_1600:
+    set(13, 0);
+    break;
+  case SLOT_1800:
+    set(13, 0);
+    break;
+  case BAD_TIME_SLOT:
+    set(13, 0);
+    ret = false;
+    break;
   }
 
-  return false;
+  return ret;
 }

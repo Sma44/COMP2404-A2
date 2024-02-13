@@ -15,7 +15,7 @@ void View::showMenu(int& choice)
   cout << "  (3) View schedule" << endl;
   cout << "  (4) Add course to schedule" << endl;
   cout << "  (5) Clear schedule" << endl;
-  cout << "  (0) Exit" << endl<<endl;
+  cout << "  (0) Exit" << endl << endl;
 
   cout << "Enter your selection: ";
   cin >> choice;
