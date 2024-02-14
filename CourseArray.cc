@@ -51,12 +51,12 @@ void CourseArray::add(Course* d)
   
 }
 
-void CourseArray::print(string s)
+void CourseArray::print(string term)
 {
   cout << endl << endl << "COURSES:" << endl;
 
   for (int i=0; i<size; ++i) {
-    if(elements[i]->getTerm() == s){
+    if(elements[i]->getTerm() == term){
       elements[i]->print();
     }
   }

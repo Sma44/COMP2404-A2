@@ -15,17 +15,18 @@ using namespace std;
 class Control
 {
   public:
-    Control(int=0);
+    Control(string="N/A");
+    ~Control();
     void launch();
     
   private:
     void initCourses(School*);
     bool addSched(Schedule*);
     bool findSched(string,Schedule**);
-    School school;
+   
+    School* school;
     View view;
-    // maybe make into pointer array    
-    Schedule scheds[MAX_ARR];
+    Schedule* scheds[MAX_ARR];
     int numScheds;
 
 };

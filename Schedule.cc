@@ -136,6 +136,7 @@ void Schedule::clear()
   {
     for (int j = 0; j < NUM_SLOTS; j++)
     {
+      delete courses[i][j];
       courses[i][j] = nullptr;
     }
   }
