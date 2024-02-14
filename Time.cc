@@ -50,7 +50,7 @@ bool Time::computeSlot(TimeSlotType &slot)
     slot = SLOT_1430;
     break;
   case 16:
-    SLOT_1600;
+    slot = SLOT_1600;
     break;
   case 18:
     slot = SLOT_1800;

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COURSE_H
 #include <iostream>
 #include <iomanip>

@@ -111,21 +111,21 @@ void Course::print()
 
 void Course::printDays()
 {
-  switch (days)
+  switch ((int)days)
   {
-  case MON_WED:
+  case 0:
     cout << "MW";
     break;
-  case TUE_THU:
+  case 1:
     // idk what tr means maybe change it back to tt
     cout << "TR";
     break;
 
-  case WED_FRI:
+  case 2:
     cout << "WF";
     break;
 
-  case BAD_WEEK_DAY:
+  case 3:
     cout << "NA";
     break;
   }

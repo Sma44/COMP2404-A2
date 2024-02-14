@@ -43,11 +43,11 @@ void Control::initCourses(School* sch)
   sch->addCourse(new Course("W24", "COMP", 2804, 'B', "Hill", WED_FRI, 16, 0));
 }
 
-bool Control::addSched(Schedule*){
+bool Control::addSched(Schedule* sched){
   if (numScheds == MAX_ARR){
     return false;
   }
-  scheds[numScheds];
+  scheds[numScheds] = sched;
   return true;
 }
 
@@ -122,7 +122,7 @@ void Control::launch(){
           view.printStr("enter the course id: ");
           view.readInt(id);
           view.printStr("\n");
-          Course** course;
+          Course** course = nullptr; // make course
           bool cFound;
           cFound = school->findCourse(id, course);
           if(!cFound){

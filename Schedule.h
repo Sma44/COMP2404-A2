@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SCHEDULE_H
 #include <iostream>
 #include <iomanip>

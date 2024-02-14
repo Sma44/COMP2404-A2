@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SCHOOL_H
 #include <iostream>
 #include <iomanip>

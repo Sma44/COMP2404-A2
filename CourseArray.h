@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COURSEARRAY_H
 #define COURSEARRAY_H
 

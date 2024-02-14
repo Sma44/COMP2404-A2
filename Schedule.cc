@@ -7,7 +7,13 @@
 Schedule::Schedule(string t)
 {
   term = t;
-  Schedule::clear();
+  for (int i = 0; i < NUM_DAYS; i++)
+  {
+    for (int j = 0; j < NUM_SLOTS; j++)
+    {
+      courses[i][j] = nullptr;
+    }
+  }
 }
 
 bool Schedule::addCourse(Course *course)
