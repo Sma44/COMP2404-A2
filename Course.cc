@@ -4,6 +4,15 @@
 
 #include "Course.h"
 
+/// @brief default constructor for Course class
+/// @param t , term
+/// @param s ,subject
+/// @param c , code
+/// @param sec ,section
+/// @param inst , instructor
+/// @param d , day
+/// @param hrs 
+/// @param mins 
 Course::Course(string t, string s, int c, char sec, string inst, LectDaysType d, int hrs, int mins){
   term = t;
   subject = s;
@@ -14,10 +23,15 @@ Course::Course(string t, string s, int c, char sec, string inst, LectDaysType d,
   time = new Time(hrs, mins);
 }
 
+/// @brief deletes dynamic time object
 Course::~Course(){
   delete time;
 }
 
+/// @brief computes the days cresponding to this
+/// @param day1 , first day return
+/// @param day2 , second day return
+/// @return , true if successful, else false
 bool Course::computeDays(WeekDayType &day1, WeekDayType &day2){
   bool ret = false;
   switch (days)
@@ -44,6 +58,9 @@ bool Course::computeDays(WeekDayType &day1, WeekDayType &day2){
   return ret;
 }
 
+/// @brief computes the time for this given a timeslot
+/// @param slot , the timeslot to assign to this
+/// @return ,true if success, else false
 bool Course::computeSlot(TimeSlotType &slot){
   return time->computeSlot(slot);
 }
@@ -86,7 +103,7 @@ bool Course::lessThan(Course* course)
 
   return false;
 }
-
+/// @brief prints terms
 void Course::print(){
   cout << id << "  Term: " << term << "   " << subject << " " << code << section << "  ";
   printDays();
@@ -95,6 +112,7 @@ void Course::print(){
   cout << "   Instr: " << instructor << endl;
 }
 
+/// @brief prints the days string corresponding to this
 void Course::printDays(){
   switch ((int)days)
   {

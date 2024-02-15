@@ -10,6 +10,9 @@ Schedule::Schedule(string t){
   clear();
 }
 
+/// @brief adds a given course to the schedule
+/// @param course , the course to add
+/// @return , true, if added, else false
 bool Schedule::addCourse(Course *course){
 
   if (course == nullptr)
@@ -50,6 +53,7 @@ bool Schedule::addCourse(Course *course){
   return true;
 }
 
+/// @brief prints the schedule in the format of a week calendar
 void Schedule::print(){
 
   cout << left << setw(0) << setfill(' ') << endl << "   Schedule for current term: " << term << endl << endl;
@@ -111,6 +115,7 @@ void Schedule::print(){
   }
 }
 
+/// @brief sets array to nullptrs
 void Schedule::clear(){
   for (int i = 0; i < NUM_DAYS; i++){
     for (int j = 0; j < NUM_SLOTS; j++){
@@ -123,6 +128,7 @@ string Schedule::getTerm(){
   return term;
 }
 
+/// @brief helper function to print a horizontal line
 void Schedule::printHorizontalLine(){
   cout << setw(104) << left << setfill('-') << "|";
   cout << setw(1) << setfill(' ') << "|" << endl;

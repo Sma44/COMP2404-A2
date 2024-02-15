@@ -7,6 +7,7 @@ using namespace std;
 
 #include "Time.h"
 
+/// @brief object that stores relevant into for the course
 class Course
 {
 

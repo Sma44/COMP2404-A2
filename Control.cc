@@ -9,6 +9,7 @@ Control::Control(string name){
   numScheds = 0;
 }
 
+/// @brief destructor for control object, deletes schedules
 Control::~Control(){
   delete school;
   for (int i = 0; i < numScheds; i++){
@@ -45,6 +46,9 @@ void Control::initCourses(School* sch)
   sch->addCourse(new Course("W24", "COMP", 2804, 'B', "Hill", WED_FRI, 16, 0));
 }
 
+/// @brief adds a given schedule to the schedule array 
+/// @param sched , the schedule to add to array
+/// @return  , true if added, otherwise false
 bool Control::addSched(Schedule* sched){
   if (numScheds == MAX_ARR){
     return false;
@@ -53,6 +57,10 @@ bool Control::addSched(Schedule* sched){
   return true;
 }
 
+/// @brief finds a given schedule specified with string
+/// @param term , the term to find the schedule for
+/// @param sched , returns the schedule 
+/// @return , true if succesfully found, else false
 bool Control::findSched(string term, Schedule** sched){
   bool ret = false;
   for (int i = 0; i < numScheds; i++){
@@ -64,7 +72,7 @@ bool Control::findSched(string term, Schedule** sched){
   return ret;
 }
 
-
+/// @brief responsible for control flow of program
 void Control::launch(){
   initCourses(school);
   int selection = 7;

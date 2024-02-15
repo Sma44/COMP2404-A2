@@ -8,12 +8,15 @@ CourseArray::CourseArray(){
   size = 0;
 }
 
+/// @brief deletes each course in the array
 CourseArray::~CourseArray(){
   for (int i=0; i<size; i++) {
     delete elements[i];
   }
 }
 
+/// @brief adds a given course to the array in ascending order
+/// @param d , the course to add
 void CourseArray::add(Course* d){
   if (size == MAX_ARR){ return; }
 
@@ -48,6 +51,8 @@ void CourseArray::add(Course* d){
   
 }
 
+/// @brief prints each course in array
+/// @param term , the given term to match
 void CourseArray::print(string term){
   cout << endl << endl << "COURSES:" << endl;
 
@@ -58,6 +63,10 @@ void CourseArray::print(string term){
   }
 }
 
+/// @brief finds a given course with the id
+/// @param id , id to match with course
+/// @param c , returns the course found
+/// @return ,true if found, else false
 bool CourseArray::find(int id, Course** c){
 
   for (int i = 0; i < size; i++){

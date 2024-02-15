@@ -10,6 +10,7 @@ using namespace std;
 #include "View.h"
 #include "Schedule.h"
 
+/// @brief responsible for the control flow of the entire program
 class Control
 {
   public:

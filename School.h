@@ -7,6 +7,7 @@
 
 using namespace std;
 
+/// @brief responsible for the courses available in the school
 class School
 {
 

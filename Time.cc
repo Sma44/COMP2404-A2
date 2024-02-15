@@ -27,6 +27,9 @@ void Time::print()
        << right << setfill('0') << setw(2) << minutes;
 }
 
+/// @brief computes the timeslot corresponding to this
+/// @param slot return for timeslot
+/// @return , true if successful, else false
 bool Time::computeSlot(TimeSlotType &slot){
   bool ret = true;
   switch (hours){
@@ -60,6 +63,9 @@ bool Time::computeSlot(TimeSlotType &slot){
   return ret;
 }
 
+/// @brief sets this to the given timeslot
+/// @param slot , the timeslot ot compute for
+/// @return ,true if successful, else false
 bool Time::setFromSlot(TimeSlotType slot){
   bool ret = true;
   switch (slot){

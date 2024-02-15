@@ -6,6 +6,7 @@ using namespace std;
 
 #include "Course.h"
 
+/// @brief responsible for the state of a schedule, storing pointers to the courses for each slot
 class Schedule
 {
 

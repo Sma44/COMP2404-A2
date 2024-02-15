@@ -3,7 +3,7 @@
 
 #include "Course.h"
 
-
+/// @brief collection class that is responsible for storing courses
 class CourseArray
 {
   public:
