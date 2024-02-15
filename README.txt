@@ -11,8 +11,3 @@ View.cc, View.h
 compilation: run 'make' in the directory of the source files.
 
 launch instructions: run './assignment02' to run the program
-
-
-TODO: 
-notify when user successfully performs an action
-print courses printing multiple instances
