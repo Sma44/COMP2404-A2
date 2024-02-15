@@ -1,9 +1,7 @@
-#pragma once
 #ifndef COURSEARRAY_H
 #define COURSEARRAY_H
 
 #include "Course.h"
-#include "defs.h"
 
 
 class CourseArray

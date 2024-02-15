@@ -1,17 +1,14 @@
-#pragma once
 #ifndef CONTROL_H
 #define CONTROL_H
 
 #include <iostream>
 #include <iomanip>
-
-#include "defs.h"
-#include "School.h"
-#include "View.h"
-#include "Schedule.h"
 #include <string.h>
 using namespace std;
 
+#include "School.h"
+#include "View.h"
+#include "Schedule.h"
 
 class Control
 {

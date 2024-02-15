@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SCHEDULE_H
 #include <iostream>
 #include <iomanip>
@@ -6,7 +5,6 @@
 using namespace std;
 
 #include "Course.h"
-#include "defs.h"
 
 class Schedule
 {

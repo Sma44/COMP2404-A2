@@ -1,12 +1,11 @@
-#pragma once
 #ifndef COURSE_H
+#define COURSE_H
 #include <iostream>
 #include <iomanip>
 #include <string>
 using namespace std;
 
 #include "Time.h"
-#include "defs.h"
 
 class Course
 {
