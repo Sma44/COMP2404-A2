@@ -54,6 +54,7 @@ bool Control::addSched(Schedule* sched){
     return false;
   }
   scheds[numScheds] = sched;
+  numScheds++;
   return true;
 }
 
@@ -102,8 +103,8 @@ void Control::launch(){
         }
       }
       if(!found){
-        scheds[numScheds] = new Schedule(term);
-        numScheds++;
+        Schedule* tempsch = new Schedule(term);
+        addSched(tempsch);
       }
       break;
 
