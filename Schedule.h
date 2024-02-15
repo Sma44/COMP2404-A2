@@ -13,7 +13,6 @@ class Schedule
 
 public:
   Schedule(string = "N/A");
-  // might need destructor??
   bool addCourse(Course *);
   void print();
   void clear();

@@ -57,8 +57,7 @@ bool Time::computeSlot(TimeSlotType &slot)
     break;
   default:
     slot = BAD_TIME_SLOT;
-    cout << endl
-         << "error in the time" << endl;
+    cout << endl << "error in the time compute" << endl;
     ret = false;
     break;
   }
@@ -96,6 +95,7 @@ bool Time::setFromSlot(TimeSlotType slot)
     break;
   case BAD_TIME_SLOT:
     set(13, 0);
+    cout << endl << "error in the timeslot set" << endl;
     ret = false;
     break;
   }

@@ -11,7 +11,9 @@ Control::Control(string name){
 
 Control::~Control(){
   delete school;
-  //for (int i = 0; i < numScheds; i++) might not be needed
+  for (int i = 0; i < numScheds; i++){
+    delete scheds[i];
+  }
 }
 
 
@@ -92,8 +94,9 @@ void Control::launch(){
         }
       }
       if(!found){
-        Schedule* tempSched = new Schedule(term);
-        scheds[numScheds] = tempSched;
+        // Schedule* tempSched = new Schedule(term);
+        scheds[numScheds] = new Schedule(term);
+        numScheds++;
       }
       break;
 
@@ -115,6 +118,7 @@ void Control::launch(){
       break;
 
     case 4: // (4) Add course to schedule
+      view.printStr("in Add course to schedule\n");
       found = false;
       for(int i = 0; i < numScheds; i++){
         if (scheds[i]->getTerm() == term){
@@ -122,21 +126,28 @@ void Control::launch(){
           view.printStr("enter the course id: ");
           view.readInt(id);
           view.printStr("\n");
-          Course** course = nullptr; // make course
+
+          Course* course = nullptr; // make course
+          Course** pass = &course;
           bool cFound;
-          cFound = school->findCourse(id, course);
+          cFound = school->findCourse(id, pass);
           if(!cFound){
             view.printStr("cannot find course\n");
             break;
           }
-          scheds[i]->addCourse(*course);
+          bool addCheck = scheds[i]->addCourse(course);
+          if (!addCheck){
+            view.printStr("in addCheck of Add course to schedule\n");
+          }
         }
       }
       if(!found){
         view.printStr("no schedules match the provided term. cannot add course\n");
       }
+      break;
       
     case 5:
+      view.printStr("in 5\n");
       found = false;
       for(int i = 0; i < numScheds; i++){
         if (scheds[i]->getTerm() == term){
@@ -148,6 +159,7 @@ void Control::launch(){
       if(!found){
         view.printStr("schedule to clear is not found\n");
       }
+      break;
     }
 
 
