@@ -27,13 +27,9 @@ void Time::print()
        << right << setfill('0') << setw(2) << minutes;
 }
 
-bool Time::computeSlot(TimeSlotType &slot)
-{
-
+bool Time::computeSlot(TimeSlotType &slot){
   bool ret = true;
-
-  switch (hours)
-  {
+  switch (hours){
   case 8:
     slot = SLOT_0830;
     break;
@@ -61,17 +57,12 @@ bool Time::computeSlot(TimeSlotType &slot)
     ret = false;
     break;
   }
-
   return ret;
 }
 
-bool Time::setFromSlot(TimeSlotType slot)
-{
-
+bool Time::setFromSlot(TimeSlotType slot){
   bool ret = true;
-
-  switch (slot)
-  {
+  switch (slot){
   case SLOT_0830:
     set(8, 30);
     break;
@@ -99,6 +90,5 @@ bool Time::setFromSlot(TimeSlotType slot)
     ret = false;
     break;
   }
-
   return ret;
 }

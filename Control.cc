@@ -77,10 +77,10 @@ void Control::launch(){
 
     switch (selection){
 
-    case 0: // (0) Exit
+    case 0:
       break;
 
-    case 1: // (1) Change current term
+    case 1:
       view.printStr("enter a term: ");
       view.readStr(term);
       view.printStr("\n");
@@ -94,17 +94,16 @@ void Control::launch(){
         }
       }
       if(!found){
-        // Schedule* tempSched = new Schedule(term);
         scheds[numScheds] = new Schedule(term);
         numScheds++;
       }
       break;
 
-    case 2: // (2) View courses
+    case 2: 
       school->printCourse(term);
       break;
 
-    case 3: // (3) View schedule
+    case 3: 
       found = false;
       for (int i = 0; i < numScheds; i++){
         if (scheds[i]->getTerm() == term){
@@ -117,7 +116,7 @@ void Control::launch(){
       }
       break;
 
-    case 4: // (4) Add course to schedule
+    case 4: 
       view.printStr("in Add course to schedule\n");
       found = false;
       for(int i = 0; i < numScheds; i++){
@@ -127,7 +126,7 @@ void Control::launch(){
           view.readInt(id);
           view.printStr("\n");
 
-          Course* course = nullptr; // make course
+          Course* course = nullptr;
           Course** pass = &course;
           bool cFound;
           cFound = school->findCourse(id, pass);
@@ -161,8 +160,5 @@ void Control::launch(){
       }
       break;
     }
-
-
   }
-
 }

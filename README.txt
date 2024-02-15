@@ -12,7 +12,5 @@ launch instructions: run './assignment02' to run the program
 
 
 TODO: 
-comment code
 notify when user successfully performs an action
-DO NOT place inline comments in your function implementations.
 print courses printing multiple instances

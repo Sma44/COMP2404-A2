@@ -3,21 +3,18 @@ using namespace std;
 
 #include "CourseArray.h"
 
-CourseArray::CourseArray()
-{
+CourseArray::CourseArray(){
   nextID = COURSE_ID;
   size = 0;
 }
 
-CourseArray::~CourseArray()
-{
+CourseArray::~CourseArray(){
   for (int i=0; i<size; i++) {
     delete elements[i];
   }
 }
 
-void CourseArray::add(Course* d)
-{
+void CourseArray::add(Course* d){
   if (size == MAX_ARR){ return; }
 
   bool flag = false;
@@ -42,7 +39,6 @@ void CourseArray::add(Course* d)
       break;
     }
   }
-  // if every element is larger than the element to add
   if (!flag){
     elements[size] = d;
     elements[size]->setId(nextID);
@@ -52,8 +48,7 @@ void CourseArray::add(Course* d)
   
 }
 
-void CourseArray::print(string term)
-{
+void CourseArray::print(string term){
   cout << endl << endl << "COURSES:" << endl;
 
   for (int i=0; i<size; ++i) {

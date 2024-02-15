@@ -4,8 +4,7 @@
 
 #include "Course.h"
 
-Course::Course(string t, string s, int c, char sec, string inst, LectDaysType d, int hrs, int mins)
-{
+Course::Course(string t, string s, int c, char sec, string inst, LectDaysType d, int hrs, int mins){
   term = t;
   subject = s;
   code = c;
@@ -15,13 +14,11 @@ Course::Course(string t, string s, int c, char sec, string inst, LectDaysType d,
   time = new Time(hrs, mins);
 }
 
-Course::~Course()
-{
+Course::~Course(){
   delete time;
 }
 
-bool Course::computeDays(WeekDayType &day1, WeekDayType &day2)
-{
+bool Course::computeDays(WeekDayType &day1, WeekDayType &day2){
   bool ret = false;
   switch (days)
   {
@@ -47,59 +44,50 @@ bool Course::computeDays(WeekDayType &day1, WeekDayType &day2)
   return ret;
 }
 
-bool Course::computeSlot(TimeSlotType &slot)
-{
+bool Course::computeSlot(TimeSlotType &slot){
   return time->computeSlot(slot);
 }
 
 bool Course::lessThan(Course* course)
 { 
-  if (term < course->term)
-  {
+  if (term < course->term)  {
     return true;
   }
-  if (term > course->term)
-  {
+  if (term > course->term)  {
     return false;
   }
 
   if(subject < course->subject){
     return true;
   }
-  if (subject > course->subject)
-  {
+
+  if (subject > course->subject)  {
     return false;
   }
 
-  if (code < course->code)
-  {
+  if (code < course->code)  {
     return true;
   }
-  if (code > course->code)
-  {
+  if (code > course->code)  {
     return false;
   }
 
-  if (section < course->section)
-  {
+  if (section < course->section)  {
     return true;
   }
 
-  if (section > course->section)
-  {
+  if (section > course->section)  {
     return false;
   }
 
-  if (instructor < course->instructor)
-  {
+  if (instructor < course->instructor)  {
     return true;
   }
 
   return false;
 }
 
-void Course::print()
-{
+void Course::print(){
   cout << id << "  Term: " << term << "   " << subject << " " << code << section << "  ";
   printDays();
   cout << " ";
@@ -107,15 +95,13 @@ void Course::print()
   cout << "   Instr: " << instructor << endl;
 }
 
-void Course::printDays()
-{
+void Course::printDays(){
   switch ((int)days)
   {
   case 0:
     cout << "MW";
     break;
   case 1:
-    // idk what tr means maybe change it back to tt
     cout << "TR";
     break;
 
@@ -129,28 +115,22 @@ void Course::printDays()
   }
 }
 
-int Course::getId()
-{
+int Course::getId(){
   return id;
 }
 
-string Course::getTerm()
-{
+string Course::getTerm(){
   return term;
 }
 
-string Course::getInstructor()
-{
+string Course::getInstructor(){
   return instructor;
 }
 
-// TODO: look into stringstream as alt to to_string
-string Course::getCourse()
-{
+string Course::getCourse(){
   return (subject + " " + to_string(code) + "-" + section);
 }
 
-void Course::setId(int i)
-{
+void Course::setId(int i){
   id = i;
 }
