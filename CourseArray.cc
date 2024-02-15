@@ -32,7 +32,7 @@ void CourseArray::add(Course* d)
   }
 
   for (int i = 0; i < size; i++){
-    if(elements[i]->lessThan(d)){
+    if(d->lessThan(elements[i])){
       for (int j = size; j > i; j--){
         elements[j] = elements[j-1];
       }
