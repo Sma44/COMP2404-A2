@@ -52,12 +52,18 @@ bool Course::computeSlot(TimeSlotType &slot)
   return time->computeSlot(slot);
 }
 
-// TODO: possibly refactor into cleaner implementation. also might not work
-bool Course::lessThan(Course *course)
-{
-
-  if (subject < course->subject)
+bool Course::lessThan(Course* course)
+{ 
+  if (term < course->term)
   {
+    return true;
+  }
+  if (term > course->term)
+  {
+    return false;
+  }
+
+  if(subject < course->subject){
     return true;
   }
   if (subject > course->subject)
@@ -74,25 +80,17 @@ bool Course::lessThan(Course *course)
     return false;
   }
 
-  if (term < course->term)
-  {
-    return true;
-  }
-  if (term > course->term)
-  {
-    return false;
-  }
-
-  if (instructor > course->instructor)
-  {
-    return false;
-  }
-  if (instructor < course->instructor)
-  {
-    return true;
-  }
-
   if (section < course->section)
+  {
+    return true;
+  }
+
+  if (section > course->section)
+  {
+    return false;
+  }
+
+  if (instructor < course->instructor)
   {
     return true;
   }
@@ -106,7 +104,7 @@ void Course::print()
   printDays();
   cout << " ";
   time->print();
-  cout << "   Instr: " << instructor;
+  cout << "   Instr: " << instructor << endl;
 }
 
 void Course::printDays()

@@ -1,4 +1,4 @@
-OPT = -Wall
+OPT = -g -Wall
 
 assignment02: main.o Control.o Course.o CourseArray.o Schedule.o School.o Time.o View.o
 	g++ -o assignment02 main.o Control.o Course.o CourseArray.o Schedule.o School.o Time.o View.o

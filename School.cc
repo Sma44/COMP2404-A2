@@ -24,5 +24,6 @@ bool School::findCourse(int id, Course** course){
 
 void School::printCourse(string term){
     courses.print(term);
+    cout << endl;
 }
 

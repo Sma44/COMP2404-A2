@@ -32,7 +32,7 @@ private:
   char section;
   string instructor;
   LectDaysType days;
-  Time *time;
+  Time* time;
   void printDays();
 };
 

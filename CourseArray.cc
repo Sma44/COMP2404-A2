@@ -11,18 +11,19 @@ CourseArray::CourseArray()
 
 CourseArray::~CourseArray()
 {
-  for (int i=0; i<size; ++i) {
+  for (int i=0; i<size; i++) {
     delete elements[i];
   }
 }
 
 void CourseArray::add(Course* d)
 {
-  if (size >= MAX_ARR){ return; }
+  if (size == MAX_ARR){ return; }
 
-  bool flag = true;
+  bool flag = false;
 
   if (size == 0){
+    cout << "entered first element" << endl;
     elements[0] = d;
     elements[0]->setId(nextID);
     nextID++;
@@ -37,11 +38,11 @@ void CourseArray::add(Course* d)
       }
       elements[i] = d;
       elements[i]->setId(nextID);
-      flag = false;
+      flag = true;
       break;
     }
   }
-
+  // if every element is larger than the element to add
   if (!flag){
     elements[size] = d;
     elements[size]->setId(nextID);
